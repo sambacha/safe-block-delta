@@ -1,12 +1,19 @@
-'use strict';
+// 'use strict';
 
-const handler = require('lambda_handler.js');
+import { handler } from './lambda_handler'
+// const handler = require('lambda_handler.js');
 require('dotenv').config();
-const Web3 = require('web3');
-const moment = require('moment');
-const _ = require('lodash');
-const EthDater = require('./ethereum-block-by-date.js');
-const { delayTime } = require('./config');
+
+import Web3 from 'web3';
+// const Web3 = require('web3');
+import moment from 'moment';
+// const moment = require('moment');
+// const _ = require('lodash');
+import _ from 'lodash';
+import { EthDater } from './ethereum-block-by-date';
+// const EthDater = require('./ethereum-block-by-date.js');
+import { delayTime } from './config';
+// const { delayTime } = require('./config');
 
 const archiveNodeUrl = process.env.ARCHIVENODE_ENDPOINT;
 const infuraUrl = process.env.WEB3_ENDPOINT_HTTPS;
@@ -25,7 +32,7 @@ const threeDaysAgo = moment().subtract(3, 'days').valueOf();
 const oneWeekAgo = moment().subtract(1, 'weeks').valueOf();
 const oneMonthAgo = moment().subtract(1, 'months').valueOf();
 
-const nbrBlocksInDay = currentBlockNbr - oneDayAgoBlock;
+//const nbrBlocksInDay = currentBlockNbr - oneDayAgoBlock;
 
 const getBlockDelta = async (previousValue, currentValue, previousBlockNbr) => {
     if (!previousValue) {
