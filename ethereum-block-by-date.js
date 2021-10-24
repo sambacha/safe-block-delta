@@ -5,6 +5,8 @@
  * Made the library synchronous and added delays for rate-limited ArchiveNODE
  */
 
+const startTime = '/0x55b9cb70'     //Ethereum start date: 2015-07-30; Unix hex timestamp = 1438239600
+
 const moment = require('moment');
 const delay = require('delay');
 
